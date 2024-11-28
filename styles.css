@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #3700b3;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #3700b3;
+    color: white;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.button-trabajador{
+    background-color: #dd720e; /* Color de fondo */ 
+    color: white; /* Color del texto */ 
+    padding: 15px 32px; /* Espaciado interno */ 
+    text-align: center; /* Alineación del texto */ 
+    text-decoration: none; /* Sin subrayado */ 
+    font-size: 16px; /* Tamaño de la fuente */ 
+    margin: 4px 2px; /* Margen */ 
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */ 
+    border: none; /* Sin borde */ 
+    border-radius: 8px; /* Bordes redondeados */ 
+    transition: background-color 0.3s; /* Transición suave */ 
+}
+
+.button-trabajador:hover { 
+    background-color: #45a049; /* Color de fondo al pasar el mouse */ 
+}
+
+button.accept {
+    background-color: #4caf50;
+}
+
+button.reject {
+    background-color: #f44336;
+}

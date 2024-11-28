@@ -1,0 +1,23 @@
+.botoncito { 
+    
+    background-color: #7e8ee9; /* Color de fondo */
+    color: white; /* Color del texto */ 
+    padding: 11px 32px; /* Espaciado interno */ 
+    text-align: center; /* Alineación del texto */ 
+    text-decoration: none; /* Sin subrayado */ 
+    /*display: inline-block; /* Mostrar como bloque en línea */ 
+    font-size: 14px; /* Tamaño de la fuente */ 
+    margin: 1px 5px; /* Margen */ 
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */ 
+    border: none; /* Sin borde */ 
+    border-radius: 8px; /* Bordes redondeados */ 
+    transition: background-color 0.3s; /* Transición suave */ 
+    background-color: #7e8ee9; /* Color de fondo al pasar el mouse */ 
+
+}
+
+.contenedor{
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+}
+

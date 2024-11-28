@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cuestionario Socioeconómico</title>
+    <style>
+        
+            /* Estilo para ambos elementos */
+            .boton-estilo {
+                background-color: rgb(0, 21, 80); /* Color de fondo */
+                color: white;          /* Color de texto */
+                padding: 10px 20px;    /* Espaciado interno */
+                border: none;          /* Sin borde */
+                border-radius: 5px;    /* Bordes redondeados */
+                text-decoration: none; /* Quitar subrayado del enlace */
+                font-size: 16px;       /* Tamaño de fuente */
+                cursor: pointer;       /* Cambiar cursor a mano */
+            }
+    
+            /* Efecto hover */
+            .boton-estilo:hover {
+                background-color: #555; /* Color de fondo al pasar el cursor */
+            }
+        .pageheader {
+            position: running(heading);
+            font-size: 10px;
+            width: 100%;
+        }
+
+        .pagefooter {
+            position: running(footer);
+            font-size: 10px;
+            width: 100%;
+        }
+
+        .pagenum::before {
+            content: counter(page)
+        }
+
+        @media print {
+            .docheader,
+            .docfooter {
+                display: none;
+            }
+            .bottomanchor {
+                position: fixed !important;
+                bottom: 0px;
+            }
+        }
+
+        @media screen {
+            .pageheader,
+            .pagefooter {
+                display: none;
+            }
+            .bottomanchor {
+                position: relative;
+            }
+            .docbody {
+                background: white;
+                padding: 10pt;
+            }
+        }
+
+        body {
+            font-family: "Arial";
+            font-size: 12pt;
+        }
+
+        .docpara {
+            font-family: 'Arial';
+            font-size: 12pt;
+            line-height: 1.28;
+            margin-bottom: 8pt;
+            margin-top: 0;
+        }
+
+        .s_Tablaconcuadrcula {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 8pt;
+        }
+
+        .docpara span {
+            font-family: 'Arial';
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="docbody part">
+        <div class="docpara" style="text-align:center;">
+            <span>CUESTIONARIO SOCIOECONÓMICO</span><br>
+            <span>INSTITUTO TECNOLÓGICO SUPERIOR DE HUICHAPAN</span>
+            <form action="GENERAR_PDF_ESTUDIO.php" method="POST" enctype="multipart/form-data">
+        </div>
+        <p style="text-align: right;">El Saucillo, Huichapan, Hidalgo a
+            <input type="text" name="dia" placeholder="Día" required> de
+            <input type="text" name="mes" placeholder="Mes" required> de
+            <input type="text" name="anio" placeholder="Año" required>
+        </p>
+        <form>
+            <!-- Datos Personales -->
+            <fieldset>
+                <legend>Datos Personales</legend>
+                
+                <label for="nombre_completo">Nombre Completo:</label>
+                <input type="text" name="nombre_completo" id="nombre_completo" style="width: 300px;">
+                <label for="curp">CURP:</label>
+                <input type="text" name="curp" id="curp" style="width: 150px;">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <label>Genero</label>
+                <input type="text" name="genero" style="width: 150px">
+                <label>Nacionalidad</label>
+                <input type="text" name="nacionalidad" style="width: 150px">
+                <label>Estado Civil</label>
+                <input type="text" name="Estado_Civil" style="width: 150px">
+                <label>Programa Educativo</label>
+                <input type="text" name="Programa_Educativo" style="width: 150px">
+                <label>Semestre</label>
+                <input type="number" name="Semestre" style="width: 150px">
+                <label>Promedio General</label>
+                <input type="number" name="Promedio_General" style="width: 150px">
+                <label for="telefono">Teléfono:</label>
+                <input type="number" name="telefono" id="telefono" style="width: 150px;">
+                <label for="correo_electronico">Correo electrónico:</label>
+                <input type="email" name="correo_electronico" id="correo_electronico" style="width: 200px;">
+            </fieldset>
+            <h2>FOTO</h2>
+        <label for="imagen">Selecciona una imagen:</label>
+        <input type="file" name="imagen" id="imagen" accept="image/*" required>
+
+
+            <!-- Domicilio -->
+            <fieldset>
+                <legend>Domicilio de residencia(FAMILIA)</legend>
+                <label for="colonia_familia">Colonia:</label>
+                <input type="text" name="colonia_familia" id="colonia_familia" style="width: 200px;">
+                <label for="localidad_familia">Localidad:</label>
+                <input type="text" name="localidad_familia" id="localidad_familia" style="width: 200px;">
+                <label for="municipio_familia">Municipio:</label>
+                <input type="text" name="municipio_familia" id="municipio_familia" style="width: 150px;">
+                <label for="estado_familia">Estado:</label>
+                <input type="text" name="estado_familia" id="estado_familia" style="width: 150px;">
+                <label for="cp_familia">Código Postal:</label>
+                <input type="number" name="cp_familia" id="cp_familia" style="width: 100px;">
+            </fieldset>
+            <fieldset>
+                <legend>Domicilio actual(RENTA)</legend>
+                <label for="colonia_renta">Colonia:</label>
+                <input type="text" name="colonia_renta" id="colonia_renta" style="width: 200px;">
+                <label for="localidad_renta">Localidad:</label>
+                <input type="text" name="localidad_renta" id="localidad_renta" style="width: 200px;">
+                <label for="municipio_renta">Municipio:</label>
+                <input type="text" name="municipio_renta" id="municipio_renta" style="width: 150px;">
+                <label for="estado_renta">Estado:</label>
+                <input type="text" name="estado_renta" id="estado_renta" style="width: 150px;">
+                <label for="cp_renta">Código Postal:</label>
+                <input type="number" name="cp_renta" id="cp_renta" style="width: 100px;">
+            </fieldset>
+
+            <!-- Integración Familiar -->
+            <fieldset>
+                <legend>Integración Familiar</legend>
+                <span>1. Enlista en esta tabla a todas las personas que viven en tu hogar incluyéndote a ti.</span>
+                <table class="s_Tablaconcuadrcula">
+                    <tr>
+                        <th>No.</th>
+                        <th>Nombre</th>
+                        <th>Sexo</th>
+                        <th>Edad</th>
+                        <th>Parentesco</th>
+                        <th>Escolaridad</th>
+                        <th>Ocupación</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="text" name="nombre1" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo1" style="width: 50px;"></td>
+                        <td><input type="number" name="edad1" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco1" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad1" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion1" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="text" name="nombre2" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo2" style="width: 50px;"></td>
+                        <td><input type="number" name="edad2" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco2" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad2" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion2" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input type="text" name="nombre3" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo3" style="width: 50px;"></td>
+                        <td><input type="number" name="edad3" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco3" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad3" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion3" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><input type="text" name="nombre4" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo4" style="width: 50px;"></td>
+                        <td><input type="number" name="edad4" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco4" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad4" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion4" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><input type="text" name="nombre5" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo5" style="width: 50px;"></td>
+                        <td><input type="number" name="edad5" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco5" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad5" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion5" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><input type="text" name="nombre6" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo6" style="width: 50px;"></td>
+                        <td><input type="number" name="edad6" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco6" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad6" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion6" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><input type="text" name="nombre7" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo7" style="width: 50px;"></td>
+                        <td><input type="number" name="edad7" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco7" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad7" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion7" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><input type="text" name="nombre8" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo8" style="width: 50px;"></td>
+                        <td><input type="number" name="edad8" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco8" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad8" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion8" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><input type="text" name="nombre9" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo9" style="width: 50px;"></td>
+                        <td><input type="number" name="edad9" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco9" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad9" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion9" style="width: 100px;"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><input type="text" name="nombre10" style="width: 150px;"></td>
+                        <td><input type="text" name="sexo10" style="width: 50px;"></td>
+                        <td><input type="number" name="edad10" style="width: 50px;"></td>
+                        <td><input type="text" name="parentesco10" style="width: 100px;"></td>
+                        <td><input type="text" name="escolaridad10" style="width: 100px;"></td>
+                        <td><input type="text" name="ocupacion10" style="width: 100px;"></td>
+                    </tr>
+                    <!-- Agregar más filas según sea necesario -->
+                </table>
+            </fieldset>
+
+            <!-- Situación Económica -->
+            <fieldset>
+                <legend>Situación Económica</legend>
+                <label class="f4">2. ¿Quién es su principal apoyo o sustento económico? (Escoja Sólo Una):</label><br>
+
+                <input type="radio" name="apoyo_economico" value="Padre"> Padre<br>
+                <input type="radio" name="apoyo_economico" value="Conyuge o Pareja"> Cónyuge o Pareja<br>
+                <input type="radio" name="apoyo_economico" value="Yo Mismo"> Yo Mismo<br>
+                <input type="radio" name="apoyo_economico" value="Madre"> Madre<br>
+                <input type="radio" name="apoyo_economico" value="Hermanos"> Hermanos<br>
+                <input type="radio" name="apoyo_economico" value="Otra(s) Persona(s)"> Otra(s) Persona(s)
+                <div class="docpara">
+                    <label class="f4">3-¿Cuántas personas incluyéndote dependen económicamente del principal apoyo o sustento?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">4-¿El domicilio donde radicas actualmente mientras estudias es el mismo donde vive tu familia?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">5-¿Cuántas personas, unidas o no por lazos de parentesco, dependen del ingreso de los miembros de
+                        tu hogar para cubrir gastos de alimento (incluyéndote)?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">6-¿Qué institución le brinda servicios de salud a ti y a tu familia?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">7-La vivienda donde vive tu familia: ¿Es propia, rentada, prestada, o qué situación tiene?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">8-¿De qué material es la mayor parte del techo de tu vivienda?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">9-¿Cuántos cuartos se usan para dormir sin contar pasillos?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">10-¿Cuántos cuartos tiene en total la vivienda contando la cocina? No cuentes ni pasillos ni baños</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">11- ¿Tienen acceso a internet en tu casa?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">12-¿Cuentas con computadora o laptop?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">13-¿Con cuántos automóviles cuentan en tu hogar?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">14-¿Cuentan con servicio de televisión de paga?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">15-¿Cuántos miembros del hogar cuentan con teléfono celular?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">16-¿Qué medio de transporte utilizas para ir a la escuela?</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">17-¿Actualmente recibes algún tipo de beca o apoyo? Si tu respuesta es afirmativa, especificar qué
+                        tipo de apoyo es:</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">18-¿Eres integrante de algún grupo indígena? Si tu respuesta es sí, especificar cuál</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+                <div class="docpara">
+                    <label class="f4">19-¿Tienes alguna discapacidad motriz, visual o auditiva? Si tu respuesta es sí, especificar cuál.
+                        *Ten en cuenta que miopía o astigmatismo no son consideradas discapacidad</label>
+                    <input type="text" name="dependientes" style="width: 150px;">
+                </div>
+            </fieldset>
+
+            <!-- Comentarios Adicionales -->
+            <div class="docpara" style="text-align:center;">
+                <span class="f4" style="font-weight:bold;">INGRESOS MENSUALES</span>
+            </div>
+            <table class="s_Tablaconcuadrcula">
+                <tr>
+                    <td>PADRE</td>
+                    <td><input type="number" name="ingreso_padre" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>MADRE</td>
+                    <td><input type="number" name="ingreso_madre" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>HERMANOS</td>
+                    <td><input type="number" name="ingreso_hermano" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>USTED</td>
+                    <td><input type="number" name="ingreso_usted" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>OTROS</td>
+                    <td><input type="number" name="ingreso_otros" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>TOTAL</td>
+                    <td><input type="number" name="ingreso_total" style="width: 100px;"></td>
+                </tr>
+            </table>
+            
+            <div class="docpara" style="text-align:center;">
+                <span class="f4" style="font-weight:bold;">EGRESOS MENSUALES</span>
+            </div>
+            <table class="s_Tablaconcuadrcula">
+                <tr>
+                    <td>ALIMENTACION</td>
+                    <td><input type="number" name="egresos_alimentacion" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>VESTIDO</td>
+                    <td><input type="number" name="egresos_vestido" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>TRANSPORTE</td>
+                    <td><input type="number" name="egresos_transporte" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>EDUCACION</td>
+                    <td><input type="number" name="egresos_educacion" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>RENTA DE CASA</td>
+                    <td><input type="number" name="renta_casa" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>OTROS</td>
+                    <td><input type="number" name="egresos_otros" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td>TOTAL</td>
+                    <td><input type="number" name="total_egresos" style="width: 100px;"></td>
+                </tr>
+            </table>
+            
+            <div class="docpara">
+                <label for="comentarios_adicionales">Comentarios Adicionales:</label>
+                <textarea name="comentarios_adicionales" id="comentarios_adicionales" rows="5" style="width: 100%;"></textarea>
+            </div>
+            <div class="docpara">
+                <p class="f4">
+                    Por medio de mi firma certifico y manifiesto decir la verdad en toda la información que proporcione; los datos proporcionados en mi solicitud de beca son de carácter oficial y su falsedad me hará sujeto de las sanciones administrativas, académicas, civiles y penales correspondientes; asimismo autorizo expresamente al ITESHU a que haga uso de los datos personales que he proporcionado para su utilización en todo lo relativo a los servicios académicos y administrativos que brinda a los alumnos, incluso para que los divulgue a terceros única y exclusivamente para los mismos fines.
+                </p>
+            </div>
+            
+            <!-- Firma del solicitante -->
+            <p style="text-align: center;">______________________________</p>
+        <p style="text-align: center;"><input type="text" name="nombre_firma" placeholder="Nombre completo" required />
+        </p>
+
+        <input type="submit" value="GENERAR PDF" class="boton-estilo">
+
+        <!-- Enlace estilizado como botón -->
+        <a href="SUBIR_DOC_ALIMENTICIA.html" class="boton-estilo">SIGUIENTE</a>
+        </form>
+    </div>
+</body>
+</html>

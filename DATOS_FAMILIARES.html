@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Editable con Siete Columnas</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .custom-column {
+            background-color: #2d81a8; /* Color púrpura similar a la imagen */
+            color: #070707;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+        .form-control {
+            margin: 0;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 style="color: #070707;">DATOS FAMILIARES</h2>
+        <p class="text-light">Este formulario permite editar los campos: No, Nombre, Sexo, Edad, Parentesco, Escolaridad y Ocupación.</p>
+
+        <!-- Fila de encabezado de la tabla -->
+        <div class="row">
+            <div class="col custom-column">No</div>
+            <div class="col custom-column">Nombre</div>
+            <div class="col custom-column">Sexo</div>
+            <div class="col custom-column">Edad</div>
+            <div class="col custom-column">Parentesco</div>
+            <div class="col custom-column">Escolaridad</div>
+            <div class="col custom-column">Ocupación</div>
+        </div>
+
+        <!-- Fila de formulario con campos editables -->
+        <form action="procesar_formulario.php" method="POST">
+            <div class="row">
+                <div class="col">
+                    <input type="number" name="no" class="form-control" value=" " required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre" class="form-control" value=" " required>
+                </div>
+                <div class="col">
+                    <select name="sexo" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion" class="form-control" value="" required>
+                </div>
+            </div>
+
+            <!-- Segunda fila editable -->
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no2" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre2" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo2" class="form-control">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino" selected>Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad2" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco2" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad2" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion2" class="form-control" value="" required>
+                </div>
+            </div>
+
+            <!-- Tercera fila editable -->
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo3" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion3" class="form-control" value="" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo3" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion3" class="form-control" value="" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo3" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion3" class="form-control" value="" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo3" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion3" class="form-control" value="" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo3" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion3" class="form-control" value="" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo3" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion3" class="form-control" value="" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <input type="number" name="no3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="nombre3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <select name="sexo3" class="form-control">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="number" name="edad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="parentesco3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="escolaridad3" class="form-control" value="" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="ocupacion3" class="form-control" value="" required>
+                </div>
+            </div>
+
+            <!-- Botón de envío -->
+           
+            <div class="form-group">
+                <input type="button" value="Siguiente" class="submit-btn" onclick="nextStep()">
+            </div>
+            
+            <script>
+                function nextStep() {
+                    window.location.href = "DATOS_FAMILIARES2.html";  // Redirige a "nuevo_formulario.html"
+                }
+            </script>
+        </form>
+    </div>
+
+    <!-- Enlace a Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega de Documentos</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #e0ffff;
+            padding: 20px;
+            margin: 50px auto;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            display: block;
+        }
+
+        .file-name {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .message {
+            font-size: 16px;
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ENTREGAR DOCUMENTOS</h1>
+        <h2>BECA DE ALIMENTICIA</h2>
+
+        <!-- Mensajes de éxito o error -->
+
+        <form id="upload-form" method="post" action="guardar_alimenticia.php" enctype="multipart/form-data">
+            <!-- Matrícula -->
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula" required>
+
+            <!-- Nombre Completo -->
+            <label for="nombre_completo">Nombre Completo:</label>
+            <input type="text" id="nombre_completo" name="nombre_completo" required>
+
+            <!-- Semestre (Select Box) -->
+            <label for="semestre">Semestre:</label>
+            <select id="semestre" name="semestre" required>
+                <option value="" disabled selected>Selecciona tu semestre</option>
+                <option value="1">1°</option>
+                <option value="2">2°</option>
+                <option value="3">3°</option>
+                <option value="4">4°</option>
+                <option value="5">5°</option>
+                <option value="6">6°</option>
+                <option value="7">7°</option>
+                <option value="8">8°</option>
+                <option value="9">9°</option>
+                <option value="10">10°</option>
+                <option value="11">11°</option>
+                <option value="12">12°</option>
+            </select>
+
+            <!-- Carrera (Select Box) -->
+            <label for="carrera">Carrera:</label>
+            <select id="carrera" name="carrera" required>
+                <option value="" disabled selected>Selecciona tu carrera</option>
+                <option value="Arquitectura">Arquitectura</option>
+                <option value="Gastronomia">Gastronomia</option>
+                <option value="Ingenieria Administración">Ingenieria en Administración</option>
+                <option value="Ingeniria en Energias Renovables">Ingenieria en Energias Renovables</option>
+                <option value="Ingeniria en Gestion Empresarial">Ingenieria en Gestion Empresarial</option>
+                <option value="Ingeniria Indutrial">Ingenieria Industrial</option>
+                <option value="Ingeniería en Innovación Agrícola Sustentable">Ingeniería en Innovación Agrícola Sustentable</option>
+                <option value="Ingeniria en Mecatronica">Ingenieria Mecatronica</option>
+                <option value="Ingenieria en Sistemas Computacionales">Ingeniaria en Sistemas Computacionales</option>
+            </select>
+
+            <!-- Botón para cargar documentos -->
+            <label class="file-label" for="documento1">IDENTIFICACIÓN OFICIAL en PDF</label>
+            <input type="file" id="documento1" name="documento1" accept=".pdf" required>
+            <div id="file-name-1" class="file-name"></div>
+
+            <label class="file-label" for="documento2">SOLICITUD en PDF</label>
+            <input type="file" id="documento2" name="documento2" accept=".pdf" required>
+            <div id="file-name-2" class="file-name"></div>
+
+            <label class="file-label" for="documento3">CARGA HORARIA en PDF</label>
+            <input type="file" id="documento3" name="documento3" accept=".pdf" required>
+            <div id="file-name-3" class="file-name"></div>
+
+            <label class="file-label" for="documento4">ESTUDIO SOCIOECONÓMICO en PDF</label>
+            <input type="file" id="documento4" name="documento4" accept=".pdf" required>
+            <div id="file-name-4" class="file-name"></div>
+
+            <button type="submit" class="button">Subir Documentos</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function () {
+                const fileName = this.files[0]?.name || "No se seleccionó archivo";
+                const fileLabel = this.nextElementSibling;
+                fileLabel.textContent = fileName;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Columns with Icons</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a1a4a7;
+            color: #0f0f0f;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Contenedor de logos en las esquinas */
+        .logo-left,
+        .logo-right {
+            position: absolute;
+            top: 30px;
+            width: 100px; /* Ajusta el tamaño del logo */
+        }
+
+        .logo-left {
+            left: 0px;
+        }
+
+        .logo-right {
+            right: 0px;
+        }
+
+        /* Título */
+        .container h2 {
+            color: #181818;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            font-weight: normal;
+        }
+
+        .container h3 {
+            color: #202020;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        /* Estilos para las columnas */
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            background-color: rgb(0, 21, 80);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 250px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .column:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Íconos */
+        .icon {
+            font-size: 2.5rem;
+            color: rgb(42, 127, 85);
+            margin-bottom: 10px;
+        }
+
+        /* Título y descripción */
+        .column h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: hwb(0 99% 1%);
+        }
+
+        .column p {
+            font-size: 0.9rem;
+            color: #dbdbdb;
+        }
+
+        /* Enlace */
+        .column a {
+            display: inline-block;
+            margin-top: 10px;
+            color: rgb(33, 243, 61);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .column a:hover {
+            color: rgb(0, 21, 80);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logos en las esquinas -->
+        <img src="iteshu.png" alt="Logo ITESHU" class="logo-left">
+        <img src="LOGO-VERTICAL-TECNM.png" alt="Logo TecNM" class="logo-right">
+
+        <!-- Título principal -->
+        <h2>DEPARTAMENTO DE BECAS "ITESHU"</h2>
+        <h3>ESTE DEPARTAMENTO SE ENCARGA DE GESTIONAR LA BECAS INTERNAS Y EXTERNAS DE "ITESHU"</h3>
+
+        <!-- Contenedor de columnas -->
+        <div class="columns">
+            <div class="column">
+                <div class="icon">🍽️</div>
+                <h3>BECAS ALIMENTICIA</h3>
+                <p>Aplica para toda la población estudiantil en general.</p>
+                <a href="SOLICTUD_ALIMENTICIA.html">ENTRAR</a>
+            </div>
+            <div class="column">
+                <div class="icon">👤</div>
+                <h3>BECA DE APROVECHAMIENTO</h3>
+                <p>Aplica para los estudiantes que obtienen un promedio de 92 o superior en el semestre inmediato anterior, en primera oportunidad.</p>
+                <a href="SOLICITUD_APROVECHAMIENTO.html">ENTRAR</a>
+            </div>
+            <div class="column">
+                <div class="icon">🎓</div>
+                <h3>BECA PARA EGEL</h3>
+                <p>Para aquellos estudiantes inscritos entre el 8° y 12° semestres que realicen el EGEL.</p>
+                <a href="SOLICITUD_EGEL.html">ENTRAR</a>
+            </div>
+            <div class="column">
+                <div class="icon">⚙️</div>
+                <h3>BECA PARA TRABAJADORES E HIJOS DE TRABAJADORES</h3>
+                <p>Para aquellos estudiantes que trabajan en el ITESHU o que su papá, mamá o tutor trabaja en el ITESHU.</p>
+                <a href="solitud_HIJOTRA.html">ENTRAR</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Beca EGEL</title>
+    <style>
+        .boton-estilo {
+            background-color: rgb(0, 21, 80);
+            /* Color de fondo */
+            color: white;
+            /* Color de texto */
+            padding: 10px 20px;
+            /* Espaciado interno */
+            border: none;
+            /* Sin borde */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            text-decoration: none;
+            /* Quitar subrayado del enlace */
+            font-size: 16px;
+            /* Tamaño de fuente */
+            cursor: pointer;
+            /* Cambiar cursor a mano */
+        }
+    </style>
+</head>
+
+<body>
+    <form action="descargar_pdfEGEL.php" method="post">
+        <p style="text-align: right;">El Saucillo, Huichapan, Hidalgo a
+            <input type="text" name="dia" placeholder="Día" required> de
+            <input type="text" name="mes" placeholder="Mes" required> de
+            <input type="text" name="anio" placeholder="Año" required>
+        </p>
+
+        <h3>Asunto: Solicitud para la Beca del Examen General de Egreso de Licenciatura (EGEL).</h3>
+
+        <p>COMITÉ DE BECAS<br>
+            DEL INSTITUTO TECNOLÓGICO SUPERIOR DE HUICHAPAN<br>
+            <strong>P R E S E N T E</strong>
+        </p>
+
+        <p>Con el gusto de saludarle, el que subscribe
+            <input type="text" name="nombre" placeholder="Nombre completo" required />
+            estudiante del
+            <input type="text" name="semestre" placeholder="Semestre" required />° semestre del programa educativo de
+            Ingeniería en
+            <input type="text" name="programa" placeholder="Programa Educativo" required /> del Instituto Tecnológico
+            Superior de Huichapan con número de matrícula
+            <input type="text" name="matricula" placeholder="Número de matrícula" required />,
+            se dirige de la manera más atenta y respetuosa, para que se considere mi postulación a la Beca del Examen
+            General de Egreso de Licenciatura (EGEL) convocatoria <input type="text" name="anio" placeholder="AÑO"
+                required />; la cual me permitirá continuar y culminar mi
+            proceso de titulación.
+        </p>
+
+        <p>Así mismo, una vez recibidos los resultados del Examen General de Egreso, me comprometo a entregar una copia
+            física o electrónica de la constancia en donde se da a conocer el reporte de resultados del nivel de
+            desempeño obtenido, si este es sobresaliente o satisfactorio.</p>
+
+        <p>Sin más por el momento, y en espera de una respuesta favorable, me despido agradeciendo la atención prestada.
+        </p>
+
+        <p style="text-align: center;"><strong>A T E N T A M E N T E</strong></p>
+
+        <p style="text-align: center;">______________________________</p>
+        <p style="text-align: center;"><input type="text" name="nombre_firma" placeholder="Nombre completo" required />
+        </p>
+
+        <p><strong>Teléfono:</strong> <input type="text" name="telefono" placeholder="000 0000000" required /></p>
+        <p><strong>Correo electrónico:</strong> <input type="email" name="correo" placeholder="tuemail@ejemplo.com"
+                required /></p>
+
+
+        <input type="submit" value="GENERAR PDF" class="boton-estilo">
+
+        <!-- Enlace estilizado como botón -->
+        <a href="SUBIR_DOCS_EGEL.html" class="boton-estilo">SIGUIENTE</a>
+    </form>
+</body>
+
+</html>
